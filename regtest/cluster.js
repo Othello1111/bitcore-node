@@ -4,7 +4,7 @@ var path = require('path');
 var async = require('async');
 var spawn = require('child_process').spawn;
 
-var BitcoinRPC = require('viacoind-rpc');
+var BitcoinRPC = require('bcored-rpc');
 var rimraf = require('rimraf');
 var bitcore = require('bcore-lib');
 var chai = require('chai');

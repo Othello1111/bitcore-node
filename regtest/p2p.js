@@ -21,7 +21,7 @@ var bitcoind;
 var should = chai.should();
 var assert = chai.assert;
 var sinon = require('sinon');
-var BitcoinRPC = require('viacoind-rpc');
+var BitcoinRPC = require('bcored-rpc');
 var transactionData = [];
 var blockHashes = [];
 var txs = [];
