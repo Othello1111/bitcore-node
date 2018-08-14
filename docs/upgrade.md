@@ -23,7 +23,7 @@ To start reindexing add `reindex=1` during the **first startup only**.
 **Before**:
 ```json
 {
-  "datadir": "/home/<username>/.viacoin",
+  "datadir": "/home/<username>/.clashic",
   "network": "livenet",
   "port": 3001,
   "services": [
@@ -47,7 +47,7 @@ To start reindexing add `reindex=1` during the **first startup only**.
   "servicesConfig": {
     "viacoin": {
       "spawn": {
-        "datadir": "/home/<username>/.viacoin",
+        "datadir": "/home/<username>/.clashic",
         "exec": "/home/<username>/bcore-node/bin/viacoind"
       }
     }

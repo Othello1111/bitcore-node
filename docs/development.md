@@ -121,7 +121,7 @@ Edit `bcore-node.json` with something similar to:
   "servicesConfig": {
     "viacoind": {
       "spawn": {
-        "datadir": "/home/<youruser>/.viacoin",
+        "datadir": "/home/<youruser>/.clashic",
         "exec": "/home/<youruser>/viacoin/src/viacoind"
       }
     }

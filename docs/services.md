@@ -48,7 +48,7 @@ var myNode = new bcore.Node({
       module: BitcoinCore,
       config: {
         spawn: {
-          datadir: '/home/<username>/.viacoin',
+          datadir: '/home/<username>/.clashic',
           exec: '/home/<username>/bcore-node/bin/viacoind'
         }
       }
