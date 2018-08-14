@@ -3,7 +3,7 @@
 var should = require('chai').should();
 
 describe('Index Exports', function() {
-  it('will export viacore-lib', function() {
+  it('will export bcore-lib', function() {
     var bitcore = require('../');
     should.exist(bitcore.lib);
     should.exist(bitcore.lib.Transaction);

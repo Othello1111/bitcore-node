@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-var viacore = require('../lib/cli/bitcore');
-viacore();
+var bcore = require('../lib/cli/bitcore');
+bcore();

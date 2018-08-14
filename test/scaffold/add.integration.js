@@ -25,7 +25,7 @@ describe('#add', function() {
         throw err;
       }
       fs.writeFile(
-        testDir + '/s0/s1/viacore-node.json',
+        testDir + '/s0/s1/bcore-node.json',
         JSON.stringify(startConfig),
         function(err) {
           if (err) {
@@ -90,12 +90,12 @@ describe('#add', function() {
       });
     });
 
-    it('will update viacore-node.json services', function(done) {
+    it('will update bcore-node.json services', function(done) {
       var callCount = 0;
       var oldPackage = {
         dependencies: {
-          'viacore-lib': '^v0.1.0',
-          'viacore-node': '^v0.2.0'
+          'bcore-lib': '^v0.1.0',
+          'bcore-node': '^v0.2.0'
         }
       };
       var spawn = sinon.stub().returns({
@@ -130,7 +130,7 @@ describe('#add', function() {
         services: ['a', 'b', 'c']
       }, function(err) {
         should.not.exist(err);
-        var configPath = path.resolve(testDir, 's0/s1/viacore-node.json');
+        var configPath = path.resolve(testDir, 's0/s1/bcore-node.json');
         var config = JSON.parse(fs.readFileSync(configPath));
         config.services.should.deep.equal(['a','b','c']);
         done();

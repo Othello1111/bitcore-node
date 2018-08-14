@@ -6,8 +6,8 @@ root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.."
 platform=`uname -a | awk '{print tolower($1)}'`
 arch=`uname -m`
 version="0.13.2"
-url="https://github.com/viacoin/viacore-viacoin/releases/download"
-tag="v0.13.2.1-viacore-rc2"
+url="https://github.com/viacoin/bcore-viacoin/releases/download"
+tag="v0.13.2.1-bcore-rc2"
 
 if [ "${platform}" == "linux" ]; then
     if [ "${arch}" == "x86_64" ]; then
@@ -18,7 +18,7 @@ if [ "${platform}" == "linux" ]; then
 elif [ "${platform}" == "darwin" ]; then
     tarball_name="viacoin-${version}-osx64.tar.gz"
 else
-    echo "Viacoin binary distribution not available for platform and architecture"
+    echo "BitcoinCore binary distribution not available for platform and architecture"
     exit -1
 fi
 
@@ -56,7 +56,7 @@ download_bitcoind() {
             fi
         fi
     fi
-    echo "Viacoin binary distribution could not be downloaded"
+    echo "BitcoinCore binary distribution could not be downloaded"
     exit -1
 }
 

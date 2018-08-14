@@ -1,13 +1,13 @@
 {
-  "name": "viacore-node",
-  "description": "Full node with extended capabilities using viacore and viacoin Core",
+  "name": "bcore-node",
+  "description": "Full node with extended capabilities using bcore and viacoin Core",
   "author": "BitPay <dev@bitpay.com>",
   "version": "3.1.11",
   "main": "./index.js",
-  "repository": "git://github.com/viacoin/viacore-node.git",
-  "homepage": "https://github.com/viacoin/viacore-node",
+  "repository": "git://github.com/viacoin/bcore-node.git",
+  "homepage": "https://github.com/viacoin/bcore-node",
   "bugs": {
-    "url": "https://github.com/viacoin/viacore-node/issues"
+    "url": "https://github.com/viacoin/bcore-node/issues"
   },
   "contributors": [
     {
@@ -35,7 +35,7 @@
     }
   ],
   "bin": {
-    "viacore-node": "./bin/viacore-node",
+    "bcore-node": "./bin/bcore-node",
     "viacoind": "./bin/viacoind"
   },
   "scripts": {
@@ -60,7 +60,7 @@
     "express": "^4.13.3",
     "liftoff": "^2.2.0",
     "viacoind-rpc": "^0.7.1",
-    "viacore-lib": "^0.14.1",
+    "bcore-lib": "^0.14.1",
     "lru-cache": "^4.0.1",
     "mkdirp": "0.5.0",
     "path-is-absolute": "^1.0.0",
@@ -75,7 +75,7 @@
   },
   "devDependencies": {
     "benchmark": "1.0.0",
-    "viacore-p2p": "^1.1.2",
+    "bcore-p2p": "^1.1.2",
     "chai": "^3.5.0",
     "coveralls": "^2.11.9",
     "istanbul": "^0.4.3",

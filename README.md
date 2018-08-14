@@ -1,20 +1,20 @@
-Viacore Node
+Bcore Node
 ============
 
-[![NPM Package](https://img.shields.io/npm/v/viacore-node.svg?style=flat-square)](https://www.npmjs.org/package/viacore-node)
-[![Build Status](https://img.shields.io/travis/viacoin/viacore-node.svg?branch=master&style=flat-square)](https://travis-ci.org/viacoin/viacore-node)
-[![Coverage Status](https://img.shields.io/coveralls/viacoin/viacore-node.svg?style=flat-square)](https://coveralls.io/r/viacoin/viacore-node)
+[![NPM Package](https://img.shields.io/npm/v/bcore-node.svg?style=flat-square)](https://www.npmjs.org/package/bcore-node)
+[![Build Status](https://img.shields.io/travis/viacoin/bcore-node.svg?branch=master&style=flat-square)](https://travis-ci.org/viacoin/bcore-node)
+[![Coverage Status](https://img.shields.io/coveralls/viacoin/bcore-node.svg?style=flat-square)](https://coveralls.io/r/viacoin/bcore-node)
 
-A Viacoin full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [Viacoin Core with additional indexing](https://github.com/viacoin/viacore-viacoin) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
+A BitcoinCore full node for building applications and services with Node.js. A node is extensible and can be configured to run additional services. At the minimum a node has an interface to [BitcoinCore Core with additional indexing](https://github.com/viacoin/bcore) for more advanced address queries. Additional services can be enabled to make a node more useful such as exposing new APIs, running a block explorer and wallet service.
 
 ## Install
 
 ```bash
-npm install -g viacore-node
-viacore-node start
+npm install -g bcore-node
+bcore-node start
 ```
 
-Note: For your convenience, we distribute bitcoind binaries for x86_64 Linux and x86_64 Mac OS X. Upon npm install, the binaries for your platform will be downloaded. For more detailed installation instructions, or if you want to compile the project yourself, then please see the Bitcore branch of [Viacoin Core with additional indexing](https://github.com/viacoin/viacore-viacoin).
+Note: For your convenience, we distribute bitcoind binaries for x86_64 Linux and x86_64 Mac OS X. Upon npm install, the binaries for your platform will be downloaded. For more detailed installation instructions, or if you want to compile the project yourself, then please see the Bcore branch of [BitcoinCore Core with additional indexing](https://github.com/bitcoin-cored/bcore).
 
 ## Prerequisites
 
@@ -26,24 +26,24 @@ Note: For your convenience, we distribute bitcoind binaries for x86_64 Linux and
 
 ## Configuration
 
-Viacore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your Viacore Node.
+Bcore includes a Command Line Interface (CLI) for managing, configuring and interfacing with your Bcore Node.
 
 ```bash
-viacore-node create -d <bitcoin-data-dir> mynode
+bcore-node create -d <bitcoin-data-dir> mynode
 cd mynode
-viacore-node install <service>
-viacore-node install https://github.com/yourname/helloworld
+bcore-node install <service>
+bcore-node install https://github.com/yourname/helloworld
 ```
 
 This will create a directory with configuration files for your node and install the necessary dependencies. For more information about (and developing) services, please see the [Service Documentation](docs/services.md).
 
 ## Add-on Services
 
-There are several add-on services available to extend the functionality of Bitcore:
+There are several add-on services available to extend the functionality of Bcore:
 
 - [Insight API](https://github.com/bitpay/insight-api)
 - [Insight UI](https://github.com/bitpay/insight-ui)
-- [Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service)
+- [Bcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service)
 
 ## Documentation
 
@@ -58,13 +58,13 @@ There are several add-on services available to extend the functionality of Bitco
 
 ## Contributing
 
-Please send pull requests for bug fixes, code optimization, and ideas for improvement. For more information on how to contribute, please refer to our [CONTRIBUTING](https://github.com/viacoin/viacore/blob/master/CONTRIBUTING.md) file.
+Please send pull requests for bug fixes, code optimization, and ideas for improvement. For more information on how to contribute, please refer to our [CONTRIBUTING](https://github.com/bitcoin-cored/bcore/blob/master/CONTRIBUTING.md) file.
 
 ## License
 
-Code released under [the MIT license](https://github.com/viacoin/viacore-node/blob/master/LICENSE).
+Code released under [the MIT license](https://github.com/bitcoin-cored/bcore-node/blob/master/LICENSE).
 
-Copyright 2016 The Viacoin Core Developers
+Copyright 2016 The BitcoinCore Core Developers
 
 - bitcore: Copyright (c) 2013-2015 BitPay, Inc. (MIT License)
 - bitcoin: Copyright (c) 2009-2015 Bitcoin Core Developers (MIT License)

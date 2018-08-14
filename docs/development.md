@@ -10,22 +10,22 @@ nvm install v4
 
 ## Fork and Download Repositories
 
-To develop viacore-node:
+To develop bcore-node:
 
 ```bash
 cd ~
-git clone git@github.com:<yourusername>/viacore-node.git
-git clone git@github.com:<yourusername>/viacore-lib.git
+git clone git@github.com:<yourusername>/bcore-node.git
+git clone git@github.com:<yourusername>/bcore-lib.git
 ```
 
-To develop viacoin or to compile from source:
+To develop bitcoin-cored or to compile from source:
 
 ```bash
-git clone git@github.com:<yourusername>/viacoin.git
+git clone git@github.com:<yourusername>/bitcoin-cored.git
 git fetch origin <branchname>:<branchname>
 git checkout <branchname>
 ```
-**Note**: See viacoin documentation for building viacoin on your platform.
+**Note**: See bitcoin core documentation for building bitcoin core on your platform.
 
 
 ## Install Development Dependencies
@@ -46,19 +46,19 @@ brew install zeromq
 ## Install and Symlink
 
 ```bash
-cd viacore-lib
+cd bcore-lib
 npm install
-cd ../viacore-node
+cd ../bcore-node
 npm install
 ```
 **Note**: If you get a message about not being able to download viacoin distribution, you'll need to compile viacoind from source, and setup your configuration to use that version.
 
 
-We now will setup symlinks in `viacore-node` *(repeat this for any other modules you're planning on developing)*:
+We now will setup symlinks in `bcore-node` *(repeat this for any other modules you're planning on developing)*:
 ```bash
 cd node_modules
-rm -rf viacore-lib
-ln -s ~/viacore-lib
+rm -rf bcore-lib
+ln -s ~/bcore-lib
 rm -rf bitcoind-rpc
 ln -s ~/bitcoind-rpc
 ```
@@ -78,7 +78,7 @@ npm install mocha -g
 
 To run all test suites:
 ```bash
-cd viacore-node
+cd bcore-node
 npm run regtest
 npm run test
 ```
@@ -102,11 +102,11 @@ cd ~
 mkdir devnode
 cd devnode
 mkdir node_modules
-touch viacore-node.json
+touch bcore-node.json
 touch package.json
 ```
 
-Edit `viacore-node.json` with something similar to:
+Edit `bcore-node.json` with something similar to:
 ```json
 {
   "network": "livenet",
@@ -135,8 +135,8 @@ Setup symlinks for all of the services and dependencies:
 
 ```bash
 cd node_modules
-ln -s ~/viacore-lib
-ln -s ~/viacore-node
+ln -s ~/bcore-lib
+ln -s ~/bcore-node
 ln -s ~/insight-api
 ln -s ~/insight-ui
 ```
@@ -158,5 +158,5 @@ rpcpassword=local321
 
 From within the `devnode` directory with the configuration file, start the node:
 ```bash
-../viacore-node/bin/viacore-node start
+../bcore-node/bin/bcore-node start
 ```

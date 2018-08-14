@@ -1,11 +1,11 @@
 # Services
-Bitcore Node has a service module system that can start up additional services that can include additional:
+Bcore Node has a service module system that can start up additional services that can include additional:
 - Blockchain indexes (e.g. querying balances for addresses)
 - API methods
 - HTTP routes
 - Event types to publish and subscribe
 
-The `viacore-node.json` file describes which services will load for a node:
+The `bcore-node.json` file describes which services will load for a node:
 
 ```json
 {
@@ -20,36 +20,36 @@ Services correspond with a Node.js module as described in 'package.json', for ex
 ```json
 {
   "dependencies": {
-    "viacore-lib": "^0.1.0",
-    "viacore-node": "^0.2.0",
+    "bcore-lib": "^0.1.0",
+    "bcore-node": "^0.2.0",
     "insight-api": "^3.0.0"
   }
 }
 ```
 
-_Note:_ If you already have a viacore-node database, and you want to query data from previous blocks in the blockchain, you will need to reindex. Reindexing right now means deleting your viacore-node database and resyncing.
+_Note:_ If you already have a bcore-node database, and you want to query data from previous blocks in the blockchain, you will need to reindex. Reindexing right now means deleting your bcore-node database and resyncing.
 
 ## Using Services Programmatically
 If, instead, you would like to run a custom node, you can include services by including them in your configuration object when initializing a new node.
 
 ```js
-//Require viacore
-var viacore = require('viacore-node');
+//Require bcore
+var bcore = require('bcore-node');
 
 //Services
-var Bitcoin = viacore.services.Bitcoin;
-var Web = viacore.services.Web;
+var Bitcoin = bcore.services.Bitcoin;
+var Web = bcore.services.Web;
 
-var myNode = new viacore.Node({
+var myNode = new bcore.Node({
   network: 'regtest'
   services: [
     {
       name: 'viacoind',
-      module: Viacoin,
+      module: BitcoinCore,
       config: {
         spawn: {
           datadir: '/home/<username>/.viacoin',
-          exec: '/home/<username>/viacore-node/bin/viacoind'
+          exec: '/home/<username>/bcore-node/bin/viacoind'
         }
       }
     },
@@ -82,7 +82,7 @@ A new service can be created by inheriting from `Node.Service` and implementing 
 - `Service.prototype.getPublishEvents()` - Describes which events can be subscribed to for this service, useful to subscribe to events over the included web socket API.
 - `Service.prototype.setupRoutes()` - A service can extend HTTP routes on an express application by implementing this method.
 
-The `package.json` for the service module can either export the `Node.Service` directly, or specify a specific module to load by including `"viacoreNode": "lib/viacore-node.js"`.
+The `package.json` for the service module can either export the `Node.Service` directly, or specify a specific module to load by including `"viacoreNode": "lib/bcore-node.js"`.
 
 Please take a look at some of the existing services for implementation specifics.
 
