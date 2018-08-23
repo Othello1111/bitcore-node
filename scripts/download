@@ -5,18 +5,18 @@ set -e
 root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.."
 platform=`uname -a | awk '{print tolower($1)}'`
 arch=`uname -m`
-version="0.13.2"
-url="https://github.com/viacoin/bcore-viacoin/releases/download"
-tag="v0.13.2.1-bcore-rc2"
+version="0.16.2"
+url="https://github.com/bitcoin-cored/bitcoin-cored/releases/download/v0.16.2/bitcoin-cored-0.16.2-x86_64-linux-gnu.tar.gz"
+tag="v0.16.2"
 
 if [ "${platform}" == "linux" ]; then
     if [ "${arch}" == "x86_64" ]; then
-        tarball_name="viacoin-${version}-x86_64-linux-gnu.tar.gz"
+        tarball_name="bitcoin-cored-${version}-x86_64-linux-gnu.tar.gz"
     elif [ "${arch}" == "x86_32" ]; then
-        tarball_name="viacoin-${version}-i686-pc-linux-gnu.tar.gz"
+        tarball_name="bitcoinc-cored-${version}-i686-pc-linux-gnu.tar.gz"
     fi
 elif [ "${platform}" == "darwin" ]; then
-    tarball_name="viacoin-${version}-osx64.tar.gz"
+    tarball_name="bitcoin-cored-${version}-osx64.tar.gz"
 else
     echo "BitcoinCore binary distribution not available for platform and architecture"
     exit -1
@@ -29,7 +29,7 @@ download_bitcoind() {
 
     cd "${root_dir}/bin"
 
-    echo "Downloading viacoin: ${binary_url}"
+    echo "Downloading BTCC: ${binary_url}"
 
     is_curl=true
     if hash curl 2>/dev/null; then
@@ -48,10 +48,10 @@ download_bitcoind() {
             wget $shasums_url
         fi
         if test -e "${tarball_name}"; then
-            echo "Unpacking viacoin distribution"
+            echo "Unpacking BTCC distribution"
             tar -xvzf $tarball_name
             if test $? -eq 0; then
-                ln -sf "viacoin-${version}/bin/viacoind"
+                ln -sf "bitcoin-cored-${version}/bin/clashicd"
                 return;
             fi
         fi
@@ -61,7 +61,7 @@ download_bitcoind() {
 }
 
 verify_download() {
-    echo "Verifying signatures of viacoin download"
+    echo "Verifying signatures of BTCC download"
     gpg --verify "${root_dir}/bin/SHA256SUMS.asc"
 
     if hash shasum 2>/dev/null; then
